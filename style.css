@@ -1,0 +1,90 @@
+body {
+  font-family: monospace;
+  counter-reset: section; 
+}
+.container {
+  height: 200px;
+  background-color: rgb(228, 222, 222);
+  border-radius: 5px;
+  width: 900px;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+}
+.submi {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+  border: none;
+}
+.text-area-border {
+  border: 1px solid rgb(151, 149, 149);
+}
+.move {
+  margin-left: 50px;
+}
+.down {
+  margin-top: 35px;
+}
+.contain {
+  margin-top: 180px;
+}
+h3 {
+  margin-left: 230px;
+}
+.hr {
+  width: 900px;
+  margin-left: 220px;
+}
+.mini {
+  margin-left: 62%;
+}
+.name-list {
+  margin-left: 210px;
+  margin-right: 230px;
+}
+li{
+  display: flex;
+  width: 850px;
+  margin-top: 10px;
+}
+.return {
+  width: 85%;
+}
+
+.return::before{
+  counter-increment: section;
+  content: " " counter(section) ". ";
+}
+.span {
+  width: 85%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 3px;
+  background: #c1c7cc;
+  color: rgb(39, 38, 116);
+  list-style: none;
+}
+
+li.drag-sort-active {
+  background: transparent;
+  color: transparent;
+  border: 1px solid #4ca1af;
+}
+
+span.drag-sort-active {
+  background: transparent;
+  color: transparent;
+}
