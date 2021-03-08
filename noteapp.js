@@ -1,9 +1,7 @@
 
-
 const userList = document.querySelector(".name-list");
 const textArea = document.querySelector(".text-area-border");
 const addListBtn = document.querySelector(".addListBtn");
-
 
 
 const arr = JSON.parse(localStorage.getItem('text')) || []
@@ -20,8 +18,6 @@ const noteFromStorage = arr.map(item =>{
     editBtn.className ='editBtn'
     editBtn.style.backgroundColor = "green";
     editBtn.style.color = "white";
-    editBtn.style.marginLeft = "65%";
-    editBtn.style.marginRight = "2px";
     const removeid = userList.childElementCount;
     editBtn.setAttribute('id', removeid)
 
@@ -60,7 +56,7 @@ userList.addEventListener('click', function (e){
         const li = e.target.parentNode;
         const span = li.firstElementChild;
         const input = document.createElement("input");
-        input.style.width = '85%';
+        // input.style.width = '85%';
         input.type = 'text';
         input.value = span.textContent;
         li.insertBefore(input, span);
@@ -100,13 +96,15 @@ function addNote(note){
     wrap.innerHTML = note;
     arr.push(textArea.value);
     localStorage.setItem('text', JSON.stringify(arr));
+    location.reload()
     
     const editBtn = document.createElement("button");
     editBtn.innerHTML = "EDIT";
     editBtn.style.backgroundColor = "green";
     editBtn.style.color = "white";
-    editBtn.style.marginLeft = "65%";
-    editBtn.style.marginRight = "2px";
+    // editBtn.style.marginLeft = "65%";
+    // editBtn.style.marginRight = "2px";
+    editBtn.style.cursor = "pointer"; 
     const removeid = userList.childElementCount;
     editBtn.setAttribute('id', removeid)
    
